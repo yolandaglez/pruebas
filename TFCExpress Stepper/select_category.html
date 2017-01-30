@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Distribute credit</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.indigo-pink.min.css">
+  <link rel="stylesheet" href="css/stepper.css">
+  <script src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+  <script src="js/stepper.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+  <style>
+    body {
+      background-color: white;
+    }
+    
+    .mdl-stepper-demo .mdl-stepper {
+      margin: auto;
+  
+    }
+  </style>
+
+</head>
+
+<body>
+  <!-- style -->
+  <style>
+    .mdl-stepper > .mdl-step > .mdl-step__content {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+  </style>
+
+  <section class="mdl-stepper-demo">
+    <div class="mdl-grid">
+      <div class="mdl-cell mdl-cell--12-col">
+        <!-- markup -->
+        <ul class="mdl-stepper mdl-stepper--feedback mdl-stepper--horizontal" id="demo-stepper-horizontal-linear-feedback">
+          <!-- first step -->
+          <li class="mdl-step">
+            <span class="mdl-step__label">
+              <span class="mdl-step__title">
+                <span class="mdl-step__title-text">Select voucher</span>
+            </span>
+            </span>
+            <div class="mdl-step__content">
+            <!--forms-->
+            <form class="mdl-step__form" name="step-distribute-credit" action="#" method="">
+              <label>Select territory:</label></br>
+                <select name="territory">
+                  <option value="eur" selected>EUR</option>
+                  <option value="us">US</option>
+                </select></br>
+                <label>Select category:</label></br>
+                <select name="category">
+                  <option value="movies" selected>movies</option>
+                  <option value="music">music</option>
+                  <option value="ebooks">ebooks</option>
+                  <option value="mobile">mobile</option>
+                  <option value="games">games</option>
+                  <option value="software">software</option>
+                  <option value="emagazine">emagazine</option>
+                  <option value="abooks">abooks</option>
+                </select></br>
+                <label>Search content:</label></br>
+                <input type="search" name="search"></br>
+                <label>Select a sender information:</label></br>
+                <select name="sender">
+                  <option value="name" selected>name</option>
+                  <option value="company_logo">Company name & logo</option>
+                  <option value="company_logo_name">Company name, logo & name</option>
+                </select></br>
+            </form>
+            </div>
+            <!--buttons-->
+            <div class="mdl-step__actions">
+              <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored" data-stepper-next>
+            Continue
+          </button>
+              <button class="mdl-button mdl-js-button mdl-js-ripple-effect" data-stepper-cancel>
+            Cancel
+          </button>
+              <button disabled class="mdl-button mdl-js-button mdl-js-ripple-effect" data-stepper-back>
+            Back
+          </button>
+            </div>
+            <!-- end first step-->
+          </li>
+          <li class="mdl-step" data-step-transient-message="">
+            <span class="mdl-step__label">
+          <span class="mdl-step__title">
+            <span class="mdl-step__title-text">Delivery</span>
+            </span>
+            </span>
+            <div class="mdl-step__content">
+             <!--forms-->
+              <div id="form_container">
+                <form id=action="#">
+                  <input type="radio" name="sendtype" value="sms">search user</input></br>
+                  <input type="search" name="search_user"></br>
+                  <input type="radio" name="sendtype" value="email">create user account</input></br>    
+                  <input type="text" name="user_name" value="user name"></br>
+                  <input type="text" name="user_email" value="user email"></br>
+                  <input type="submit" name="submit" value="Create account"></br>
+                </form>
+              </div>
+            </div>
+            <div class="mdl-step__actions">
+              <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored" data-stepper-next>
+            Continue
+          </button>
+              <button class="mdl-button mdl-js-button mdl-js-ripple-effect" data-stepper-cancel>
+            Cancel
+          </button>
+              <button disabled class="mdl-button mdl-js-button mdl-js-ripple-effect" data-stepper-back>
+            Back
+          </button>
+            </div>
+          </li>
+          <li class="mdl-step" data-step-transient-message="">
+            <span class="mdl-step__label">
+          <span class="mdl-step__title">
+            <span class="mdl-step__title-text">Order</span>
+            </span>
+            </span>
+            <div class="mdl-step__content">
+              <form class="mdl-step__form" name="step-send-pay" action="#" method="post" >
+                <input type="text" name="country" value="UK" disabled></br>
+                <input type="text" name="category" value="music" disabled></br>
+                <input type="text" name="content" value="Jason Derulo Full Album" disabled></br>
+                <input type="text" name="user_name" value="user" disabled></br>
+                <input type="text" name="send_method" value="phone number or email" disabled></br>
+                <input type="text" name="sender" value="KidChoose" disabled></br>
+              </form>
+            </div>
+            <div class="mdl-step__actions">
+              <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored" data-stepper-next>
+            Continue
+          </button>
+              <button class="mdl-button mdl-js-button mdl-js-ripple-effect" data-stepper-cancel>
+            Cancel
+          </button>
+              <button class="mdl-button mdl-js-button mdl-js-ripple-effect" data-stepper-back>
+            Back
+          </button>
+            </div>
+          </li>
+          <li class="mdl-step" data-step-transient-message="">
+            <span class="mdl-step__label">
+              <span class="mdl-step__title">
+                <span class="mdl-step__title-text">Pay and send</span>
+            </span>
+            </span>
+            <div class="mdl-step__content">
+            <!--forms-->
+              <form class="mdl-step__form" name="step-payment-method" action="#" method="">
+                  <label>Please indicate your preferred payment method: </label></br>
+                  <input type="radio" name="payment" value="credit">Credit card</input></br>
+                  <input type="radio" name="payment" value="paypal">PayPal</input></br>
+                  <input type="radio" name="payment" value="paytool">PayTool</input></br>
+                  <input type="submit" name="submit" value="Pay">
+              </form>
+            </div>
+            <div class="mdl-step__actions">
+              <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored" data-stepper-next>
+            Continue
+          </button>
+              <button class="mdl-button mdl-js-button mdl-js-ripple-effect" data-stepper-cancel>
+            Cancel
+          </button>
+              <button disabled class="mdl-button mdl-js-button mdl-js-ripple-effect" data-stepper-back>
+            Back
+          </button>
+
+            </div>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+
+  </section>
+
+  <!-- script -->
+  <script>
+   
+  (function () {
+    var stepperHorizontal = function () {
+      var selector = '.mdl-stepper#demo-stepper-horizontal-linear-feedback';
+      // Select stepper container element      
+      var stepperElement = document.querySelector(selector);
+      var Stepper;
+      var steps;
+      var inputTransientMessage /** @type {HTMLElement} */;
+
+      if (!stepperElement) return;
+      
+      // Get the MaterialStepper instance of element to control it.          
+      Stepper = stepperElement.MaterialStepper;
+      
+      if (!Stepper) {
+        console.error('MaterialStepper instance is not available for selector: ' + selector + '.');
+        return;
+      }
+      steps = stepperElement.querySelectorAll('.mdl-step');
+
+      for (var i = 0; i < steps.length; i++) {
+        
+        // When user clicks on [data-stepper-next] button of step.          
+        steps[i].addEventListener('onstepnext', (function (e, step) {
+          return function () {
+            // {element}.MaterialStepper.next() change the state of current step to "completed" 
+            // and move one step forward.        
+            inputTransientMessage = step.querySelector('#stepper-transient-message');
+            
+            if (inputTransientMessage && inputTransientMessage.value.length) {
+              step.setAttribute('data-step-transient-message', inputTransientMessage.value);
+            }
+            setTimeout(function () {
+              Stepper.next();              
+            }, 3000);
+          };
+        })(event, steps[i]));
+      }
+      // When all steps are completed this event is dispatched.          
+      stepperElement.addEventListener('onsteppercomplete', function (e) {
+        var toast = document.querySelector('#snackbar-stepper-complete');
+        if (!toast) return;
+        toast.MaterialSnackbar.showSnackbar({
+          message: 'Stepper horizontal + feedback are completed',
+          timeout: 4000,
+          actionText: 'Ok'
+        });
+      });
+    };
+
+    window.addEventListener('load', stepperHorizontal)
+  })();
+</script>
+</body>
+
+</html>

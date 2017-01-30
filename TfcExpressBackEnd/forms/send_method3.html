@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>TFCExpress User Flow</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" href="c">
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript">
+
+	$(function() {
+
+		$("input[name='sendtype']").click(function() {
+			$("form.form_container").hide();
+			var id = $(this).val();
+			$("form." + id).show();
+		});
+
+	});
+
+	</script>
+	</head>
+		<body>
+			<div id="form_container">
+				<form id=action="#">
+					<input type="radio" name="sendtype" value="sms">Send by sms</input></br>
+					<input type="radio" name="sendtype" value="email">Send by email</input></br>		
+				</form>
+				<form id="form_sub_container1" class="form_container sms" style="display: none">
+					<input type="text" name="sms_user_name" value="name"></br>
+					<input type="text" name="sms_user_phone" value="phone number"></br>
+				</form>
+				<form id="form_sub_container2" class="form_container email" style="display: none">
+					<input type="text" name="email_user_name" value="name"></br>
+					<input type="text" name="email_user_email" value="email"></br>
+				</form>
+
+			</div>
+		</body>
+</html>
+
+

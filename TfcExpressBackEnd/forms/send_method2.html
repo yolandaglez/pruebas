@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>TFCExpress User Flow</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" href="c">
+	<script type="text/javascript">
+		
+	function showhide() {
+
+		if (document.getElementById('send_by_sms').style.display = "none") {
+			//show the form
+			document.getElementById('send_by_sms').style.display = "block";
+		}
+
+		else 
+			//hide the form
+			document.getElementById('send_by_sms').style.display = "block";
+			//clear the form
+			document.getElementById('send_by_sms').style.display = "none";
+
+	}
+
+	</script>
+	</head>
+		<body>
+			<div id="form_container">
+				<form id="select_option">
+					<input type="checkbox" name="sms" onchange="showhide()">Send by SMS</input></br>
+					<input type="checkbox" name="email">Send by EMAIL</input></br>
+				</form>
+				<form id="send_by_sms" style="display: none">
+					<input type="text" name="sms_user_name" value="name" ></br>
+					<input type="text" name="sms_user_number" value="phone number" ></br>
+				</form>
+				<form id="send_by_email" style="display: none">
+					<input type="text" name="email_user_name" value="name"></br>
+					<input type="text" name="email_user_email" value="email"></br>
+				</form>
+			</div>
+		</body>
+</html>

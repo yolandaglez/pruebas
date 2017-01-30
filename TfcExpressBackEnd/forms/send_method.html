@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>TFCExpress User Flow</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link rel="stylesheet" href="c">
+	<style>
+		#showed {
+			display: none;
+		}
+
+		#hidden {
+			display: none;
+		}
+	</style>
+	<script type="text/javascript">
+
+	/*function display(a) {
+
+		if(a.checked)
+	    	document.getElementById("form_sub_container1").style.display = 'block';
+
+		else
+	    	document.getElementById("form_sub_container").style.display = 'none';
+	}*/
+
+		function show() {
+
+			var checkbox = document.getElementById("sms");
+
+			var hiddeninputs = document.getElementById("showed");
+
+			if (checkbox.checked) {
+
+				for (var i = 0; i <= hiddeninputs.length; i++) {
+
+					hiddeninputs[i].style.display = "block";
+				}
+
+			}
+
+			else {
+
+				hiddeninputs[i].style.display = "none";
+			}
+		}
+
+		function hide() {
+
+			var checkbox = document.getElementById("email");
+
+			var hiddeninputs = document.getElementById("hidden");
+
+			if (checkbox.checked) {
+
+				for (var i = 0; i <= hiddeninputs.length; i++) {
+
+					hiddeninputs[i].style.display = "block";
+				}
+
+			}
+
+			else {
+
+				hiddeninputs[i].style.display = "none";
+			}
+		}
+	</script>
+	</head>
+		<body>
+			<div id="form_container">
+				<form action="#">
+					<input type="checkbox" id="sms" onclick="show()">Send by sms</input></br>
+					<input type="checkbox" id ="email" onclick="hide()">Send by email</input></br>	
+					<input type="text" name="sms_user_name" value="name" id="showed" ></br>
+					<input type="text" name="sms_user_phone" value="phone number" id="showed" ></br>
+					<input type="text" name="email_user_name" value="name" id="hidden" ></br>
+					<input type="text" name="email_user_email" value="email" id="hidden" ></br>
+				</form>
+			</div>
+		</body>
+</html>
+
+

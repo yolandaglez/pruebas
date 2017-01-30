@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+	<head>
+	    <title>TFC Admin Login</title>
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <link href="/css/material.blue-orange.min.css" rel="stylesheet">
+	    <script src="/js/global/material.min.js"></script>
+	    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+	    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	    <style>
+		    body {
+		    	background-image:url('/image/login/background.jpg');
+		    	background-position:50% 50%;
+		    	background-size:cover;
+		    	box-sizing:border-box;
+		    	color:#444;
+		    	margin:0;
+		    	padding-left:20px;
+		    	padding-right:20px;
+		    	padding-top:100px;
+		    }
+
+		    #container {
+		    	background:#fafafa;
+		    	border:1px solid #ebebeb;
+		    	box-shadow: rgba(0, 0, 0, 0.2) 0 1px 1px 0, rgba(0, 0, 0, 0.15) 0px 1px 2px 0px;
+		    	margin:auto;
+		    	max-width:300px;
+		    	padding:40px;
+		    }
+
+		    img {
+		    	width:100%;
+		    }
+
+		    h1 {
+		    	color:#999;
+		    	font-size:1.5em;
+		    	line-height:1;
+		    	margin:30px 0 5px 0;
+		    	text-align:center;
+		    }
+
+		    #submit {
+		    	height:40px;
+		    	margin-top:20px;
+		    	width:100%;
+		    }
+
+		    @media (max-width:768px){
+		    	body {
+		    		padding-top:50px;
+		    	}
+
+		    	#container {
+		    		padding:20px;
+		    	}
+		    }
+
+		    .error {
+				color:#d04141;
+				margin:20px 0 0 0;
+			}
+	    </style>
+	</head>
+	<body>
+		<div id="container">
+			<img src="/image/global/FullLogo.svg">
+			<h1>Please log in below</h1>
+			{% if errorMessages is defined %}
+				{% for error in errorMessages %}
+			<p class="error">{{ error }}</p>
+				{% endfor %}
+			{% endif %}
+			<form action="" method="post">
+				<!--<input type="hidden" name="{{ csrfNameKey }}" value="{{ csrfName }}">
+    			<input type="hidden" name="{{ csrfValueKey }}" value="{{ csrfValue }}">-->
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label{% if errors.user is defined %} is-invalid{% endif %}">
+					<input class="mdl-textfield__input" type="text" id="user" name="user"{% if old.user is defined %} value="{{ old.user|escape }}"{% endif %}>
+					<label class="mdl-textfield__label" for="user">User or email address...</label>
+					{% if errors.user is defined %}
+					<span class="mdl-textfield__error">{{ errors.user }}</span>
+					{% endif %}
+				</div>
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label{% if errors.password is defined %} is-invalid{% endif %}" style="padding-top:30px;">
+					<input class="mdl-textfield__input" type="password" id="password" name="password">
+					<label class="mdl-textfield__label" for="password">Password...</label>
+					{% if errors.password is defined %}
+					<span class="mdl-textfield__error">{{ errors.password }}</span>
+					{% endif %}
+				</div>
+				<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="remember">
+					<input type="checkbox" name="remember" id="remember" class="mdl-checkbox__input" value="1">
+					<span class="mdl-checkbox__label">Remember me next time</span>
+				</label>
+				<input type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" name="submit" id="submit" value="Log in">
+			</form>
+		</div>
+	</body>
+</html>
